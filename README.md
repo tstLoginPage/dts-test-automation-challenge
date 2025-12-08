@@ -1,4 +1,4 @@
-**Test Automation Framework Activity - Technical Prerequisites and Submission Guidelines** 
+#Test Automation Framework Activity - Technical Prerequisites and Submission Guidelines 
 
 Thank you for your interest in the Senior Software Developer in Test position here at HMCTS.  As part of our interview process. We appreciate your time and effort in completing this activity, which will help us assess your technical skills in test automation. 
 
@@ -11,7 +11,7 @@ Version Control Skills
 Development Environment Setup 
 Please keep these requirements in mind as you proceed with the activity. We value your skills and expertise in these areas and look forward to seeing your implementation. 
 
-**Documentation and Submission Guidelines: **
+**Documentation and Submission Guidelines:**
  
 The deadline for submitting the completed activity will be confirmed by our recruitment department.  
 Package your code and any supporting files in a ZIP file or share a repository link if applicable. 

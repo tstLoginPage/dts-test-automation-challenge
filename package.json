@@ -1,0 +1,23 @@
+{
+  "name": "dts-test-automation-challenge",
+  "version": "1.0.0",
+  "description": "Thank you for your interest in the Senior Software Developer in Test position here at HMCTS.  As part of our interview process. We appreciate your time and effort in completing this activity, which will help us assess your technical skills in test automation.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tstLoginPage/dts-test-automation-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tstLoginPage/dts-test-automation-challenge/issues"
+  },
+  "homepage": "https://github.com/tstLoginPage/dts-test-automation-challenge#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.8"
+  }
+}

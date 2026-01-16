@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@datafactory/*": ["lib/datafactory/*"],
       "@pages/*": ["lib/pages/*"]
     }
   }

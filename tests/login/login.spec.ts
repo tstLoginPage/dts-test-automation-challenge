@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from "@pages/login/login.page";
+import { registerUser } from "@datafactory/register";
 
 test.describe('Login Page Tests', () => {
     test.beforeEach(async ({ page }) => {
@@ -67,5 +68,19 @@ test.describe('Login Page Tests', () => {
         
         await expect(loginPage.emailInputErrorMessage).toContainText('Email is required');
         await expect(loginPage.passwordInputErrorMessage).toContainText('Password is required');
+    });
+
+    test('Login with newly registered user', async ({ page }) => {
+        const email = `test${Date.now()}@test.com`;
+        const password = "fjdWEdfs82@";
+        
+        await registerUser(email, password);
+
+        const loginPage = new LoginPage(page);
+        await loginPage.goto();
+        await loginPage.login(email, password);
+
+        await expect(page.getByTestId('nav-menu')).toContainText('Test User');
+        await expect(page.getByTestId('page-title')).toContainText("My account");
     });
 });

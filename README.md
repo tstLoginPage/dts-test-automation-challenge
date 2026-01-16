@@ -1,50 +1,42 @@
-# Test Automation Framework Activity - Technical Prerequisites and Submission Guidelines 
+# HMCTS Test Automation Framework TypeScript-Playwright – Login Tests
 
-Thank you for your interest in the Senior Software Developer in Test position here at HMCTS.  As part of our interview process. We appreciate your time and effort in completing this activity, which will help us assess your technical skills in test automation. 
+## Installing and running
 
-In this technical challenge, we would like you to showcase the following: 
+1. To these tests, you must have the following installed:
+   - Node v20 or higher [Node Prebuilt Installer](https://nodejs.org/en/download/prebuilt-installer) or use `brew install node`
+2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
+3. `npm install` to install the node depencies
+4. `npx playwright install` to install the playwright browsers
+5. `npx playwright test` to run all the test in the directory
 
-Proficiency in Programming 
-Familiarity with Test Automation Frameworks 
-Web Application Testing Proficiency 
-Version Control Skills 
-Development Environment Setup 
-Please keep these requirements in mind as you proceed with the activity. We value your skills and expertise in these areas and look forward to seeing your implementation. 
+## Working with the tests
 
-**Documentation and Submission Guidelines:**
+To work with and extend the tests I recommend installing: 
+- [VS Code](https://code.visualstudio.com/)
+- [VS Code Playwright Extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright)
+
+## Application under test
+
+https://practicesoftwaretesting.com/ 
+
+A free reference site with some interesting challenges hosted to practice testing. It's automatically republished and cleaned so data is not permanent. Users are created for reference.
+
+Details of accounts etc at the github repository: https://github.com/testsmith-io/practice-software-testing/blob/main/README.md
  
-The deadline for submitting the completed activity will be confirmed by our recruitment department.  
-Package your code and any supporting files in a ZIP file or share a repository link if applicable. 
-Provide clear instructions on how to submit your code, including any specific steps or guidelines. 
-If you have any questions or need further clarification on the technical prerequisites or submission guidelines, please feel free to reach out to us. 
+## Design choices
 
-**Interview Preparation:** 
-Be prepared to present your code, explain your design choices, and discuss any challenges you encountered during the interview. 
-Think about potential improvements you would make given additional time to work on the activity. 
-We look forward to receiving your completed Test Automation Framework Activity and discussing your approach during the interview. Best of luck! 
- 
-**Activity: Implement Test Automation Framework Objective:**
+Used Node, TypeScript and Playwright to create a test framework that is clean and reliable.
+Used :
+- a page object model meaning test code is separate from reusable page description.
+- data factory methods to create users
+Configured :
+- tsconfig.json - to include the relevant paths for compilation and code completion.
+- playwright.config.ts - configure baseURL, local and CI run configuration including browsers tested against and retries etc. Used two test reoprters to give an html version that is readable and has full debug information and a list reporter for local running and to be visible in console output to show the curennt tests and running order. Since the site under test uses 'data-test' as it's test id rather than Playwrights default 'data-testid'.
+- simple github workflow to run the tests when the repo is updated.
+Assertions are kept as often as possible in the test file for readability rather than in POM or framework.
 
-Implement a test automation framework for a simple web application of your choice that tests the login functionality. 
-
-Instructions: 
-
-Use any programming language (Java, Python, C#, or JavaScript) and test automation framework of your choice such as Selenium WebDriver, Playwright, Cypress, TestNG, JUnit, NUnit, PyTest, or Jasmine. 
-Create a new test project/repository. 
-Set up the necessary dependencies and configurations for the test framework. 
-Write test cases to automate the login functionality of a web application.  
-The test cases should cover both positive and negative scenarios. 
-Include test data setup and teardown steps as necessary. 
-Utilise appropriate design patterns and best practices for test automation. 
-Implement logging and reporting mechanisms to track test execution and results. 
-Handle any necessary waits, assertions, and exception handling in your tests. 
-Use version control to manage your code changes. 
-Deliverables: 
-
-The source code of the test automation framework. 
-A README file with instructions on how to set up and run the tests. 
-A brief explanation of your design choices and any additional improvements you would make if given more time. 
- 
-During the interview, you will need to showcase your proficiency with this framework, and your coding abilities will be evaluated through a brief live coding exercise. 
-
-The use of AI coding assistants is permitted. However, please ensure the submission represents your own understanding, as you will be required to explain, justify and extend your code during the interview.
+## Ideas for improvement
+With more tme improvemnts would be:
+- adding a fixture to load the page object model to save having to create new pages in tests
+- creating an auth setup, so that tests other than login can login once and share the authentication cookies etc to save logging in everytime
+- Make sure test data is refactored to a file if it needs to be reused.

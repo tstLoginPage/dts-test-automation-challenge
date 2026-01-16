@@ -26,7 +26,6 @@ Details of accounts etc at the github repository: https://github.com/testsmith-i
 ## Design choices
 
 Used Node, TypeScript and Playwright to create a test framework that is clean and reliable.
-Used :
 - Page object model meaning test code is separate from reusable page description.
 - Data factory methods to create users
 - Configured :
@@ -36,7 +35,7 @@ Used :
 - Assertions are kept as often as possible in the test file for readability rather than in POM or framework.
 
 ## Ideas for improvement
-With more tme improvments would be:
+With more time improvements would be:
 - adding a fixture to load the page object model to save having to create new pages in tests
 - creating an auth setup, so that tests other than login can login once and share the authentication cookies etc to save logging in everytime
 - Make sure test data is refactored to a file if it needs to be reused.

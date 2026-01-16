@@ -27,16 +27,16 @@ Details of accounts etc at the github repository: https://github.com/testsmith-i
 
 Used Node, TypeScript and Playwright to create a test framework that is clean and reliable.
 Used :
-- a page object model meaning test code is separate from reusable page description.
-- data factory methods to create users
-Configured :
-- tsconfig.json - to include the relevant paths for compilation and code completion.
-- playwright.config.ts - configure baseURL, local and CI run configuration including browsers tested against and retries etc. Used two test reoprters to give an html version that is readable and has full debug information and a list reporter for local running and to be visible in console output to show the curennt tests and running order. Since the site under test uses 'data-test' as it's test id rather than Playwrights default 'data-testid'.
-- simple github workflow to run the tests when the repo is updated.
-Assertions are kept as often as possible in the test file for readability rather than in POM or framework.
+- Page object model meaning test code is separate from reusable page description.
+- Data factory methods to create users
+- Configured :
+    - tsconfig.json - to include the relevant paths for compilation and code completion.
+    - playwright.config.ts - configure baseURL, local and CI run configuration including browsers tested against and retries etc. Used two test reoprters to give an html version that is readable and has full debug information and a list reporter for local running and to be visible in console output to show the curennt tests and running order. Since the site under test uses 'data-test' as it's test id rather than Playwrights default 'data-testid'.
+- Simple github workflow to run the tests when the repo is updated.
+- Assertions are kept as often as possible in the test file for readability rather than in POM or framework.
 
 ## Ideas for improvement
-With more tme improvemnts would be:
+With more tme improvments would be:
 - adding a fixture to load the page object model to save having to create new pages in tests
 - creating an auth setup, so that tests other than login can login once and share the authentication cookies etc to save logging in everytime
 - Make sure test data is refactored to a file if it needs to be reused.
